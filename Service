@@ -1,0 +1,13 @@
+ServiceConnection
+1 . In viewmodel 
+
+Problem when put inviewmodel because need to get the connection to the device. 
+mservice.connect(address). Already put in service connected or create a method in viewmodel then called the method from service object but
+fail .
+
+2. In View
+MainActivity  will receive broadcast from Service. Then using viewmodel in MainActivity to set the connection state. It work but only using fragment since the connection only exist in MainActivity. As you noticed that fragment is also part of the activity. If navigate to other activity the connection is not exist.
+
+3. In repository as model
+This is the last decision project to use sample from nordic. In viewmodel it already handles all the connection . In repository  we put the 
+receiving and sending method. In viewmodel called the receive & send method from repository. The problem about this project repository fail to use as singleton because when using it the connection lost when navigate to other activity.
